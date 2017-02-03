@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Airbnb home</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Your banner code -->
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/background.jpg');">
+      <div class="banner-content">
+        <h1>Welcome</h1>
+        <p>Book your new home away from home</p>
+        <!-- Special stuff -->
+        <form class="form-inline">
+          <input type="text" id="arrival" placeholder="Arrival date" class="form-control datepicker">
+          <input type="text" id="departure" placeholder="Departure date" class="form-control datepicker">
+          <select class="form-control">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+          </select>
+          <input type="submit" value="Search" class="btn btn-md btn-primary">
+        </form>
+      </div>
+    </div>
+    <!-- Your features code -->
+    <div class="container padded text-center features">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <img src="images/globe.png" alt="">
+          <h2>Our homeworld</h2>
+          <p>Is very nice.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <img src="images/beer.png" alt="">
+          <h2>Beer</h2>
+          <p>Everyone loves beer.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <img src="images/dollar.png" alt="">
+          <h2>Money</h2>
+          <p>Dough and bitches, nigga.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-3">
+          <img src="images/heart.png" alt="">
+          <h2>Love for all</h2>
+          <p>Remember to love your parents.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Your cards code -->
+    <div class="wrapper-grey">
+      <h2 class="text-center">Your next trip</h2>
+      <div class="container text-left">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/jupiter.png');">
+              <div class="card-category">Popular</div>
+              <div class="card-description">
+                <h2>Jupiter</h2>
+                <p>If you like gas</p>
+              </div>
+              <img class="card-user avatar avatar-large" src="images/anne.jpg">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/saturn.jpg');">
+              <div class="card-category">Popular</div>
+              <div class="card-description">
+                <h2>Saturn</h2>
+                <p>If you like rings</p>
+              </div>
+              <img class="card-user avatar avatar-large" src="images/seb.jpg">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+              <div class="card-category">Popular</div>
+              <div class="card-description">
+                <h2>Hjørring</h2>
+                <p>Paris of the north</p>
+              </div>
+              <img class="card-user avatar avatar-large" src="images/beer.png">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+    <!-- Your newsletter code -->
+    <div class="newletter text-center">
+      <h2>Subscribe to our intrusive newsletter</h2>
+      <p>Leave us your mail and get your unique share of our fake news</p>
+      <form action="#" class="form-inline">
+        <label for="your-email"></label>
+        <input type="email" id="your-email" placeholder="donald@trump.com" class="form-control">
+        <input type="submit" value="Subscribe" class="btn btn-md btn-primary">
+      </form>
+    </div>
+    <!-- Your map code -->
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+    var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
+
+    var myOptions = {
+      zoom: 16,
+      center: myLatlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: "You are here!"
+    });
+    </script>
+    <!-- Your footer code -->
+    <div class="wrapper-black">
+      <div class="container footer-container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <ul class="list-inline">
+              <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
+              <li><a href=""><i class="fa fa-facebook fa-2x"></i></a></li>
+              <li><a href=""><i class="fa fa-instagram fa-2x"></i></a></li>
+              <li><a href=""><i class="fa fa-youtube fa-2x"></i></a></li>
+            </ul>
+           </div>
+          <div class="col-xs-12 col-sm-6">
+            <p class="footer-text">Footer with social media and stuff</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,59 @@
+@import url("components/avatar.css");
+@import url("components/banner.css");
+@import url("components/footer.css");
+@import url("components/card.css");
+
+body {
+  margin: 0;
+  font-family: Open-sans, sans-serif;
+}
+h1, h2, h3 {
+  font-family: Raleway, Helvetica, sans-serif;
+}
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+.padded {
+  padding: 100px 0;
+}
+.wrapper-grey {
+  background: #F4F4F4;
+  padding: 100px 0;
+}
+.newletter {
+  margin: 80px;
+ }
+
+ .footer-text {
+  margin-top: 20px;
+ }
+
+@media (min-width: 768px) {
+  .footer-text {
+    text-align: right;
+    margin-top: 0;
+  }
+}
+.fa {
+  color: #f2f2f2;
+  transition: color 0.2s ease;
+}
+.fa-twitter:hover {
+  color: #059ff5;
+}
+.fa-facebook:hover {
+  color: #39579a;
+}
+.fa-instagram:hover {
+  background: #00C9FF; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fb2e72 , #5c31d2); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fb2e72 , #5c31d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-youtube:hover {
+  color: #e91d00;
+}
